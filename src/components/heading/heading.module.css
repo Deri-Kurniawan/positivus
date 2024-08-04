@@ -1,0 +1,26 @@
+.heading {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 40px;
+  line-height: normal;
+  letter-spacing: 0%;
+  padding: 0 7px;
+  margin: 0;
+  border-radius: 7px;
+  width: fit-content;
+}
+
+.heading--primary {
+  background-color: hsl(var(--color-primary));
+  color: hsl(var(--color-black));
+}
+
+.heading--secondary {
+  background-color: hsl(var(--color-secondary));
+  color: hsl(var(--color-white));
+}
+
+.heading--ghost {
+  background-color: hsl(var(--color-white));
+  color: hsl(var(--color-black));
+}
