@@ -1,4 +1,6 @@
-export function IconPlus(props: IconProps) {
+import { forwardRef } from "react";
+
+export const IconPlus = forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -6,7 +8,7 @@ export function IconPlus(props: IconProps) {
       height="20"
       fill="#000"
       viewBox="0 0 26 26"
-      {...props}
+      {...{ ref, ...props }}
     >
       <path
         style={{
@@ -16,4 +18,4 @@ export function IconPlus(props: IconProps) {
       ></path>
     </svg>
   );
-}
+});
