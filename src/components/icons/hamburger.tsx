@@ -15,20 +15,20 @@ export const IconHamburger = forwardRef<SVGSVGElement, IconProps>(
         <path
           d="M1 1.80664H25"
           stroke="inherit"
-          stroke-width="2"
-          stroke-linecap="round"
+          strokeWidth="2"
+          strokeLinecap="round"
         />
         <path
           d="M1 9.80664H25"
           stroke="inherit"
-          stroke-width="2"
-          stroke-linecap="round"
+          strokeWidth="2"
+          strokeLinecap="round"
         />
         <path
           d="M1 17.8066H25"
           stroke="inherit"
-          stroke-width="2"
-          stroke-linecap="round"
+          strokeWidth="2"
+          strokeLinecap="round"
         />
       </svg>
     );
