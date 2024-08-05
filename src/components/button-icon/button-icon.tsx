@@ -42,12 +42,15 @@ type ButtonIconProps = {
 
 const ButtonIcon: FC<ButtonIconProps> = forwardRef(
   (
-    { icon, asChild, children, ...props },
+    { icon, asChild, children, ...restProps },
     ref: LegacyRef<HTMLButtonElement>
   ) => {
     const className = [
-      buttonClasses({ variant: props.variant, iconOnly: props.iconOnly }),
-      props.className,
+      buttonClasses({
+        variant: restProps.variant,
+        iconOnly: restProps.iconOnly,
+      }),
+      restProps.className,
     ]
       .filter(Boolean)
       .join(" ");
@@ -58,7 +61,7 @@ const ButtonIcon: FC<ButtonIconProps> = forwardRef(
           "Children must be a React element when using the `asChild` prop."
         );
       return cloneElement(children as React.ReactElement, {
-        ...props,
+        ...restProps,
         ref,
         className: [className, (children as React.ReactElement).props.className]
           .filter(Boolean)
@@ -75,7 +78,7 @@ const ButtonIcon: FC<ButtonIconProps> = forwardRef(
     }
 
     return (
-      <button {...props} ref={ref} className={className}>
+      <button {...{ ref, ...restProps, className }}>
         <div className={styles["button-icon__icon"]}>{icon}</div>
         <span className={styles["button-icon__label"]}>{children}</span>
       </button>

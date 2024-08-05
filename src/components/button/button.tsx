@@ -52,11 +52,7 @@ const Button: FC<ButtonProps> = forwardRef(
       });
     }
 
-    return (
-      <button ref={ref} className={className} {...restProps}>
-        {children}
-      </button>
-    );
+    return <button {...{ ref, ...restProps, className }}>{children}</button>;
   }
 );
 
