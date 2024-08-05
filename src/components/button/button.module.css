@@ -16,6 +16,7 @@
   color: hsl(var(--color-black));
   /* safe area for non-button elements */
   width: auto;
+  white-space: nowrap;
 }
 
 /* primary styles */

@@ -1,1 +1,1 @@
-declare type IconProps = React.HTMLAttributes<SVGElement>;
+declare type IconProps = React.SVGAttributes<SVGSVGElement>;
