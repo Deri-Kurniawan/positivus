@@ -1,0 +1,94 @@
+.navbar {
+  --padding-y: 30px;
+  --padding-x: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% - var(--padding-x) * 2);
+  gap: 16px;
+  padding: var(--padding-y) var(--padding-x);
+}
+
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 8.47px;
+}
+
+.navbar__brand__icon {
+  width: 24px;
+  height: 24px;
+}
+
+.navbar__brand__icon-text {
+  width: 112px;
+  height: 19px;
+}
+
+/* button */
+.navbar__hamburger {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  width: fit-content;
+  height: fit-content;
+  cursor: pointer;
+}
+
+.navbar__list {
+  display: none;
+}
+
+.navbar__list__cta {
+  display: none;
+}
+
+@media (min-width: 1028px) {
+  .navbar {
+    --padding-y: 60px;
+    --padding-x: 100px;
+  }
+
+  .navbar__brand {
+    gap: 12.92px;
+  }
+
+  .navbar__brand__icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .navbar__brand__icon-text {
+    width: 171px;
+    height: 29px;
+  }
+
+  .navbar__hamburger {
+    display: none;
+  }
+
+  .navbar__list {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .navbar__list__item {
+    list-style: none;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: normal;
+    white-space: nowrap;
+  }
+
+  .navbar__list__item a {
+    text-decoration: none;
+    color: var(--color-text);
+  }
+
+  .navbar__list__cta {
+    display: flex;
+  }
+}
