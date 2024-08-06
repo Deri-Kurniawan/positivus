@@ -45,7 +45,7 @@
   display: none;
 }
 
-@media (min-width: 1028px) {
+@media (min-width: 1366px) {
   .navbar {
     --padding-y: 60px;
     --padding-x: 100px;
