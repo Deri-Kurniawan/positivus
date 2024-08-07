@@ -5,9 +5,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: calc(100% - var(--padding-x) * 2);
   gap: 16px;
-  padding: var(--padding-y) var(--padding-x);
+  box-sizing: border-box;
+  width: 100%;
+  padding: 30px 20px;
 }
 
 .navbar__brand {
@@ -47,8 +48,7 @@
 
 @media (min-width: 1366px) {
   .navbar {
-    --padding-y: 60px;
-    --padding-x: 100px;
+    padding: 60px 100px;
   }
 
   .navbar__brand {
