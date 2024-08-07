@@ -52,7 +52,7 @@ const Heading: FC<HeadingProps> = forwardRef(
     }
 
     return (
-      <h2 ref={ref} className={className} {...restProps}>
+      <h2 ref={ref} {...restProps} className={className}>
         {children}
       </h2>
     );
