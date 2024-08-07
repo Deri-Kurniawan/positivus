@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { expect } from "@storybook/test";
-import companyAmazon from "./assets/images/company-amazon.png";
-import companyDribbble from "./assets/images/company-dribbble.png";
-import companyNetflix from "./assets/images/company-netflix.png";
-import companyNotion from "./assets/images/company-notion.png";
-import companyZoom from "./assets/images/company-zoom.png";
+import companyAmazon from "../../assets/images/company-amazon.png";
+import companyDribbble from "../../assets/images/company-dribbble.png";
+import companyNetflix from "../../assets/images/company-netflix.png";
+import companyNotion from "../../assets/images/company-notion.png";
+import companyZoom from "../../assets/images/company-zoom.png";
 import Marquee from "./marquee";
 import styles from "./marquee.module.css";
 
