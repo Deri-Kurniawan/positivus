@@ -18,6 +18,7 @@ const meta = {
     variant: "primary",
     children: "Label",
     asChild: false,
+    level: 1,
   },
 } satisfies Meta<typeof Heading>;
 
@@ -28,20 +29,54 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     variant: "primary",
-    asChild: false,
   },
 };
 
 export const Secondary: Story = {
   args: {
     variant: "secondary",
-    asChild: false,
   },
 };
 
 export const Ghost: Story = {
   args: {
     variant: "ghost",
-    asChild: false,
+  },
+};
+
+export const AsChild: Story = {
+  args: {
+    asChild: true,
+    children: <h1>H1 Tag</h1>,
+  },
+};
+
+export const Level1: Story = {
+  args: {
+    level: 1,
+  },
+};
+
+export const Level2: Story = {
+  args: {
+    level: 2,
+  },
+};
+
+export const Level3: Story = {
+  args: {
+    level: 3,
+  },
+};
+
+export const Level4: Story = {
+  args: {
+    level: 4,
+  },
+};
+
+export const LevelP: Story = {
+  args: {
+    level: "p",
   },
 };

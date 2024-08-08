@@ -16,9 +16,17 @@ const headingClasses = cva(styles.heading, {
       secondary: styles["heading--secondary"],
       ghost: styles["heading--ghost"],
     },
+    level: {
+      1: styles["heading--level-1"],
+      2: styles["heading--level-2"],
+      3: styles["heading--level-3"],
+      4: styles["heading--level-4"],
+      p: styles["heading--level-p"],
+    },
   },
   defaultVariants: {
     variant: "primary",
+    level: 1,
   },
 });
 
@@ -30,10 +38,10 @@ type HeadingProps = {
 
 const Heading: FC<HeadingProps> = forwardRef(
   (
-    { asChild, children, variant, ...restProps },
+    { asChild, children, variant, level, ...restProps },
     ref: LegacyRef<HTMLHeadingElement>
   ) => {
-    const className = [headingClasses({ variant }), restProps.className]
+    const className = [headingClasses({ variant, level }), restProps.className]
       .filter(Boolean)
       .join(" ");
 
