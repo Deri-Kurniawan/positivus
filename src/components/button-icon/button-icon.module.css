@@ -45,7 +45,7 @@
 
 /* primary styles */
 .button-icon--primary > .button-icon__icon {
-  background-color: hsla(var(--color-primary));
+  background-color: hsl(var(--color-primary));
 }
 .button-icon--primary > *,
 .button-icon--primary > .button-icon__icon > * {
@@ -55,7 +55,7 @@
 
 /* primary alt styles */
 .button-icon--primary-alt > .button-icon__icon {
-  background-color: hsla(var(--color-primary));
+  background-color: hsl(var(--color-primary));
 }
 .button-icon--primary-alt > *,
 .button-icon--primary-alt > .button-icon__icon > * {
@@ -65,17 +65,20 @@
 
 /* secondary styles */
 .button-icon--secondary > .button-icon__icon {
-  background-color: hsla(var(--color-secondary));
+  background-color: hsl(var(--color-secondary));
 }
 .button-icon--secondary > *,
 .button-icon--secondary > .button-icon__icon > * {
-  color: hsla(var(--color-primary));
-  fill: hsla(var(--color-primary));
+  color: hsl(var(--color-primary));
+  fill: hsl(var(--color-primary));
+}
+.button-icon__label {
+  color: hsl(var(--color-black));
 }
 
 /* secondary alt styles */
 .button-icon--secondary-alt > .button-icon__icon {
-  background-color: hsla(var(--color-secondary));
+  background-color: hsl(var(--color-secondary));
 }
 .button-icon--secondary-alt > *,
 .button-icon--secondary-alt > .button-icon__icon > * {
@@ -89,8 +92,8 @@
 }
 .button-icon--ghost > *,
 .button-icon--ghost > .button-icon__icon > * {
-  color: hsla(var(--color-primary));
-  fill: hsla(var(--color-primary));
+  color: hsl(var(--color-primary));
+  fill: hsl(var(--color-primary));
 }
 .button-icon--ghost > .button-icon__label {
   color: hsl(var(--color-white));
@@ -134,8 +137,8 @@
 }
 .button-icon--primary-plain > *,
 .button-icon--primary-plain > .button-icon__icon > * {
-  color: hsla(var(--color-primary));
-  fill: hsla(var(--color-primary));
+  color: hsl(var(--color-primary));
+  fill: hsl(var(--color-primary));
 }
 
 /* secondary plain styles */
@@ -147,8 +150,8 @@
 }
 .button-icon--secondary-plain > *,
 .button-icon--secondary-plain > .button-icon__icon > * {
-  color: hsla(var(--color-secondary));
-  fill: hsla(var(--color-secondary));
+  color: hsl(var(--color-secondary));
+  fill: hsl(var(--color-secondary));
 }
 
 /* ghost plain styles */
