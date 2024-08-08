@@ -1,0 +1,57 @@
+.typography {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.typography--level-1,
+.typography--level-2,
+.typography--level-3,
+.typography--level-4 {
+  font-weight: 500;
+}
+
+.typography--level-p {
+  font-weight: 400;
+}
+
+.typography--level-1 {
+  font-size: 43px;
+}
+
+.typography--level-2 {
+  font-size: 36px;
+}
+
+.typography--level-3 {
+  font-size: 26px;
+}
+
+.typography--level-4 {
+  font-size: 18px;
+}
+
+.typography--level-p {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@media (min-width: 1366px) {
+  .typography--level-1 {
+    font-size: 60px;
+    font-weight: 500;
+  }
+
+  .typography--level-2 {
+    font-size: 40px;
+    font-weight: 500;
+  }
+
+  .typography--level-3 {
+    font-size: 30px;
+    font-weight: 500;
+  }
+
+  .typography--level-p {
+    font-size: 18px;
+  }
+}
