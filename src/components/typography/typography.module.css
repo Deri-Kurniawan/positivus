@@ -1,6 +1,8 @@
 .typography {
   font-size: 18px;
   font-weight: 400;
+  margin: 0;
+  padding: 0;
 }
 
 .typography--level-1,
