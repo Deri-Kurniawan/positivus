@@ -54,9 +54,9 @@ const Typography: FC<TypographyProps> = forwardRef(
     }
 
     return (
-      <h2 ref={ref} {...restProps} className={className}>
+      <p ref={ref} {...restProps} className={className}>
         {children}
-      </h2>
+      </p>
     );
   }
 );
