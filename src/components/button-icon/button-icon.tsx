@@ -42,13 +42,13 @@ type ButtonIconProps = {
 
 const ButtonIcon: FC<ButtonIconProps> = forwardRef(
   (
-    { icon, asChild, children, ...restProps },
+    { variant, icon, asChild, children, iconOnly, ...restProps },
     ref: LegacyRef<HTMLButtonElement>
   ) => {
     const className = [
       buttonClasses({
-        variant: restProps.variant,
-        iconOnly: restProps.iconOnly,
+        variant,
+        iconOnly,
       }),
       restProps.className,
     ]
