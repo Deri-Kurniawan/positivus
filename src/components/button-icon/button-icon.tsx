@@ -26,10 +26,14 @@ export const buttonClasses = cva(styles["button-icon"], {
     iconOnly: {
       true: styles["button-icon--icon-only"],
     },
+    rotateArrowAnimation: {
+      true: styles["button-icon--rotate-arrow"],
+    },
   },
   defaultVariants: {
     variant: "primary",
     iconOnly: undefined,
+    rotateArrowAnimation: undefined,
   },
 });
 
@@ -42,13 +46,22 @@ type ButtonIconProps = {
 
 const ButtonIcon: FC<ButtonIconProps> = forwardRef(
   (
-    { variant, icon, asChild, children, iconOnly, ...restProps },
+    {
+      variant,
+      icon,
+      asChild,
+      children,
+      iconOnly,
+      rotateArrowAnimation,
+      ...restProps
+    },
     ref: LegacyRef<HTMLButtonElement>
   ) => {
     const className = [
       buttonClasses({
         variant,
         iconOnly,
+        rotateArrowAnimation,
       }),
       restProps.className,
     ]
