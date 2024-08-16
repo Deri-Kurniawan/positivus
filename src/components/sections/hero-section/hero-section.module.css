@@ -47,7 +47,7 @@
   object-fit: cover;
 }
 
-@media (min-width: 1028px) {
+@media (min-width: 1366px) {
   .hero {
     --padding-y: 0px;
     --padding-x: 100px;
