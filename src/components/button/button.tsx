@@ -1,9 +1,9 @@
 import { cva, VariantProps } from "class-variance-authority";
 import React, {
+  ButtonHTMLAttributes,
   cloneElement,
   FC,
   forwardRef,
-  HTMLAttributes,
   LegacyRef,
   ReactNode,
 } from "react";
@@ -24,9 +24,8 @@ const buttonClasses = cva(styles.button, {
 
 type ButtonProps = {
   asChild?: boolean;
-  disabled?: boolean;
   children?: ReactNode;
-} & HTMLAttributes<HTMLButtonElement> &
+} & ButtonHTMLAttributes<HTMLButtonElement> &
   VariantProps<typeof buttonClasses>;
 
 const Button: FC<ButtonProps> = forwardRef(

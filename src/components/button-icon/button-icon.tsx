@@ -1,15 +1,15 @@
 import { cva, VariantProps } from "class-variance-authority";
 import React, {
+  ButtonHTMLAttributes,
   cloneElement,
   FC,
   forwardRef,
-  HTMLAttributes,
   LegacyRef,
   ReactNode,
 } from "react";
 import styles from "./button-icon.module.css";
 
-export const buttonClasses = cva(styles["button-icon"], {
+const buttonClasses = cva(styles["button-icon"], {
   variants: {
     variant: {
       primary: styles["button-icon--primary"],
@@ -41,7 +41,7 @@ type ButtonIconProps = {
   icon: ReactNode;
   asChild?: boolean;
   children?: ReactNode;
-} & HTMLAttributes<HTMLButtonElement> &
+} & ButtonHTMLAttributes<HTMLButtonElement> &
   VariantProps<typeof buttonClasses>;
 
 const ButtonIcon: FC<ButtonIconProps> = forwardRef(
