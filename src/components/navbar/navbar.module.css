@@ -47,6 +47,11 @@
 }
 
 @media (min-width: 1366px) {
+  .navbar {
+    margin: 60px 0;
+    padding: 0 var(--container);
+  }
+
   .navbar__brand {
     gap: 12.92px;
   }

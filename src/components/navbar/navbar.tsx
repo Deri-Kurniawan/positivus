@@ -1,19 +1,23 @@
-import { forwardRef } from "react";
+import { ComponentProps, forwardRef } from "react";
 import Button from "../button/button";
 import {
   IconHamburger,
   IconPositivus,
   IconPositivusTypography,
 } from "../icons";
-import { navbarData } from "./data";
 import styles from "./navbar.module.css";
 
-type NavbarProps = {
-  links?: { title: string; url: string }[];
-} & React.ComponentProps<"nav">;
+export type TNavLinkData = {
+  title: string;
+  url: string;
+};
+
+interface NavbarProps extends ComponentProps<"nav"> {
+  data?: TNavLinkData[];
+}
 
 const Navbar = forwardRef<HTMLDivElement, NavbarProps>(
-  ({ links = navbarData, ...restProps }, ref) => {
+  ({ data = [], ...restProps }, ref) => {
     const className = [styles.navbar, restProps.className]
       .filter(Boolean)
       .join(" ");
@@ -30,7 +34,7 @@ const Navbar = forwardRef<HTMLDivElement, NavbarProps>(
           <IconHamburger />
         </button>
         <ul className={styles["navbar__list"]}>
-          {links.map(({ title, url }) => (
+          {data.map(({ title, url }) => (
             <li key={url} className={styles["navbar__list__item"]}>
               <a href={url}>{title}</a>
             </li>
