@@ -1,14 +1,10 @@
 .navbar {
-  --padding-y: 30px;
-  --padding-x: 20px;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  box-sizing: border-box;
   width: 100%;
-  padding: 30px 20px;
+  padding: 30px var(--container);
 }
 
 .navbar__brand {
@@ -46,11 +42,11 @@
   display: none;
 }
 
-@media (min-width: 1366px) {
-  .navbar {
-    padding: 60px 100px;
-  }
+.navbar__list__item {
+  font-family: var(--font-family);
+}
 
+@media (min-width: 1366px) {
   .navbar__brand {
     gap: 12.92px;
   }
@@ -77,7 +73,7 @@
 
   .navbar__list__item {
     list-style: none;
-    font-size: 20px;
+    font-size: 1.25rem;
     line-height: 28px;
     font-weight: normal;
     white-space: nowrap;

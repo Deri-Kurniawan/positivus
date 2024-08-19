@@ -15,7 +15,7 @@ const HeroSection = forwardRef<HTMLDivElement, HeroSectionProps>(
       <section {...{ ref, ...restProps, className: className }}>
         <div className={styles["hero__content"]}>
           <h2
-            className={`${styles["hero__content__title"]} ${styles["hero__content__title--desktop-only"]}`}
+            className={`${styles["hero__content__title"]} ${styles["hero__content__title--desktop"]}`}
           >
             Navigating the digital landscape for success
           </h2>
@@ -38,7 +38,7 @@ const HeroSection = forwardRef<HTMLDivElement, HeroSectionProps>(
           />
         </div>
         <h2
-          className={`${styles["hero__content__title"]} ${styles["hero__content__title--mobile-only"]}`}
+          className={`${styles["hero__content__title"]} ${styles["hero__content__title--mobile"]}`}
         >
           Navigating the digital landscape for success
         </h2>

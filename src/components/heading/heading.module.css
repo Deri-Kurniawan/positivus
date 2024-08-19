@@ -1,7 +1,7 @@
 .heading {
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 40px;
+  font-size: 2.5rem;
   line-height: normal;
   letter-spacing: 0%;
   padding: 0 7px;
@@ -38,43 +38,43 @@
 }
 
 .heading--level-1 {
-  font-size: 43px;
+  font-size: 2.6875rem;
 }
 
 .heading--level-2 {
-  font-size: 36px;
+  font-size: 2.25rem;
 }
 
 .heading--level-3 {
-  font-size: 26px;
+  font-size: 1.625rem;
 }
 
 .heading--level-4 {
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .heading--level-p {
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 24px;
 }
 
 @media (min-width: 1366px) {
   .heading--level-1 {
-    font-size: 60px;
+    font-size: 3.75rem;
     font-weight: 500;
   }
 
   .heading--level-2 {
-    font-size: 40px;
+    font-size: 2.5rem;
     font-weight: 500;
   }
 
   .heading--level-3 {
-    font-size: 30px;
+    font-size: 1.875rem;
     font-weight: 500;
   }
 
   .heading--level-p {
-    font-size: 18px;
+    font-size: 1.125rem;
   }
 }

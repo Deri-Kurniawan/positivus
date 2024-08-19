@@ -1,20 +1,18 @@
 .hero {
-  --padding-y: 0px;
-  --padding-x: 20px;
-
   display: flex;
   flex-direction: column-reverse;
-  padding: var(--padding-y) var(--padding-x);
+  padding: 0 var(--container);
+  font-family: var(--font-family);
 }
 
 .hero__content__title {
-  font-size: 43px;
+  font-size: 2.6875rem;
   font-weight: 500;
   margin: 0;
 }
 
 .hero__content__description {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 24px;
   margin-top: 20px;
@@ -24,11 +22,11 @@
   margin-top: 40px !important;
 }
 
-.hero__content__title--mobile-only {
+.hero__content__title--mobile {
   display: block;
 }
 
-.hero__content__title--desktop-only {
+.hero__content__title--desktop {
   display: none;
 }
 
@@ -49,14 +47,10 @@
 
 @media (min-width: 1366px) {
   .hero {
-    --padding-y: 0px;
-    --padding-x: 100px;
-
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: 108.54px;
-    padding: var(--padding-y) var(--padding-x);
   }
 
   .hero__content {
@@ -66,25 +60,24 @@
   }
 
   .hero__content__title {
-    font-family: var(--font-family);
-    font-size: 60px;
+    font-size: 3.75rem;
     font-weight: 500;
     color: hsl(var(--color-black));
     margin: 0;
     padding: 0;
   }
 
-  .hero__content__title--mobile-only {
+  .hero__content__title--mobile {
     display: none;
   }
 
-  .hero__content__title--desktop-only {
+  .hero__content__title--desktop {
     display: block;
   }
 
   .hero__content__description {
     font-family: var(--font-family);
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 400;
     line-height: 28px;
     color: hsl(var(--color-black));
