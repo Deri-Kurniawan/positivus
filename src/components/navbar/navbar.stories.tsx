@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { expect } from "@storybook/test";
-import { navbarData } from "./data";
+import data from "../../data";
 import Navbar from "./navbar";
 import styles from "./navbar.module.css";
 
@@ -12,7 +12,7 @@ const meta = {
   tags: ["autodocs"],
   argTypes: {},
   args: {
-    links: navbarData,
+    data: data.navlinks,
   },
 } satisfies Meta<typeof Navbar>;
 

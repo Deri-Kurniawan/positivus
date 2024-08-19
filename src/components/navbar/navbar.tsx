@@ -12,9 +12,9 @@ export type TNavLinkData = {
   url: string;
 };
 
-interface NavbarProps extends ComponentProps<"nav"> {
+type NavbarProps = {
   data?: TNavLinkData[];
-}
+} & ComponentProps<"nav">;
 
 const Navbar = forwardRef<HTMLDivElement, NavbarProps>(
   ({ data = [], ...restProps }, ref) => {
