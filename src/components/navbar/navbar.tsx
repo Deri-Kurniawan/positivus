@@ -7,11 +7,6 @@ import {
 } from "../icons";
 import styles from "./navbar.module.css";
 
-export type TNavLink = {
-  title: string;
-  url: string;
-};
-
 type NavbarProps = {
   data?: TNavLink[];
 } & ComponentProps<"nav">;

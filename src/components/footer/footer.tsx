@@ -3,19 +3,12 @@ import ButtonIcon from "../button-icon/button-icon";
 import Button from "../button/button";
 import Heading from "../heading/heading";
 import { IconPositivus, IconPositivusTypography } from "../icons";
-import { TNavLink } from "../navbar/navbar";
 import Typography from "../typography/typography";
 import styles from "./footer.module.css";
 
-export type SocialMediaData = {
-  title: string;
-  url: string;
-  icon: JSX.Element;
-};
-
 type FooterProps = {
   navLinks?: TNavLink[];
-  socialMedia?: SocialMediaData[];
+  socialMedia?: SocialMedia[];
 } & ComponentProps<"footer">;
 
 const Footer = forwardRef<HTMLDivElement, FooterProps>(
