@@ -7,13 +7,13 @@ import {
 } from "../icons";
 import styles from "./navbar.module.css";
 
-export type TNavLinkData = {
+export type TNavLink = {
   title: string;
   url: string;
 };
 
 type NavbarProps = {
-  data?: TNavLinkData[];
+  data?: TNavLink[];
 } & ComponentProps<"nav">;
 
 const Navbar = forwardRef<HTMLDivElement, NavbarProps>(
