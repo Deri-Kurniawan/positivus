@@ -1,12 +1,14 @@
 import { cva, VariantProps } from "class-variance-authority";
-import React, {
+import {
   cloneElement,
   FC,
   forwardRef,
   HTMLAttributes,
   LegacyRef,
+  ReactElement,
   ReactNode,
 } from "react";
+import { mcn } from "../../lib/utils";
 import styles from "./typography.module.css";
 
 const typographyClasses = cva(styles.typography, {
@@ -35,29 +37,21 @@ const Typography: FC<TypographyProps> = forwardRef(
     { asChild, children, level, ...restProps },
     ref: LegacyRef<HTMLDivElement>
   ) => {
-    const className = [typographyClasses({ level }), restProps.className]
-      .filter(Boolean)
-      .join(" ");
+    const className = mcn([typographyClasses({ level }), restProps.className]);
 
     if (asChild) {
       if (typeof children === "string")
         throw new Error(
           "Children must be a React element when using the `asChild` prop."
         );
-      return cloneElement(children as React.ReactElement, {
+      return cloneElement(children as ReactElement, {
         ref,
         ...restProps,
-        className: [className, (children as React.ReactElement).props.className]
-          .filter(Boolean)
-          .join(" "),
+        className: mcn([className, (children as ReactElement).props.className]),
       });
     }
 
-    return (
-      <p ref={ref} {...restProps} className={className}>
-        {children}
-      </p>
-    );
+    return <p {...{ ref, ...restProps, className }}>{children}</p>;
   }
 );
 

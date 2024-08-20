@@ -1,12 +1,14 @@
 import { cva, VariantProps } from "class-variance-authority";
-import React, {
+import {
   cloneElement,
   FC,
   forwardRef,
   HTMLAttributes,
   LegacyRef,
+  ReactElement,
   ReactNode,
 } from "react";
+import { mcn } from "../../lib/utils";
 import styles from "./heading.module.css";
 
 const headingClasses = cva(styles.heading, {
@@ -41,29 +43,24 @@ const Heading: FC<HeadingProps> = forwardRef(
     { asChild, children, variant, level, ...restProps },
     ref: LegacyRef<HTMLHeadingElement>
   ) => {
-    const className = [headingClasses({ variant, level }), restProps.className]
-      .filter(Boolean)
-      .join(" ");
+    const className = mcn([
+      headingClasses({ variant, level }),
+      restProps.className,
+    ]);
 
     if (asChild) {
       if (typeof children === "string")
         throw new Error(
           "Children must be a React element when using the `asChild` prop."
         );
-      return cloneElement(children as React.ReactElement, {
+      return cloneElement(children as ReactElement, {
         ref,
         ...restProps,
-        className: [className, (children as React.ReactElement).props.className]
-          .filter(Boolean)
-          .join(" "),
+        className: mcn([className, (children as ReactElement).props.className]),
       });
     }
 
-    return (
-      <h2 ref={ref} {...restProps} className={className}>
-        {children}
-      </h2>
-    );
+    return <h2 {...{ ref, ...restProps, className }}>{children}</h2>;
   }
 );
 

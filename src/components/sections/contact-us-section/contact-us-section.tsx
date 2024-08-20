@@ -2,6 +2,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { FormEvent, forwardRef, HTMLAttributes, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { mcn } from "../../../lib/utils";
 import Button from "../../button/button";
 import Card from "../../card/card";
 import Heading from "../../heading/heading";
@@ -38,7 +39,7 @@ const formSchema = z.object({
   message: z.string().min(1, "Message is required"),
 });
 
-interface ContactUsSectionProps extends HTMLAttributes<HTMLDivElement> {}
+type ContactUsSectionProps = HTMLAttributes<HTMLDivElement>;
 
 const ContactUsSection = forwardRef<HTMLDivElement, ContactUsSectionProps>(
   ({ ...restProps }, ref) => {
@@ -57,9 +58,7 @@ const ContactUsSection = forwardRef<HTMLDivElement, ContactUsSectionProps>(
       },
     });
 
-    const className = [styles["contact-us-section"], restProps.className]
-      .filter(Boolean)
-      .join(" ");
+    const className = mcn([styles["contact-us-section"], restProps.className]);
 
     const handleSubmit = async (values: z.infer<typeof formSchema>) => {
       if (!form.formState.isValid) return;

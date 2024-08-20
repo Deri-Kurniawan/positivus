@@ -1,4 +1,5 @@
 import { ComponentProps, forwardRef } from "react";
+import { mcn } from "../../lib/utils";
 import ButtonIcon from "../button-icon/button-icon";
 import Button from "../button/button";
 import Heading from "../heading/heading";
@@ -13,9 +14,7 @@ type FooterProps = {
 
 const Footer = forwardRef<HTMLDivElement, FooterProps>(
   ({ navLinks = [], socialMedia = [], ...restProps }, ref) => {
-    const className = [styles.footer, restProps.className]
-      .filter(Boolean)
-      .join(" ");
+    const className = mcn([styles.footer, restProps.className]);
 
     return (
       <footer {...{ ref, ...restProps, className }}>

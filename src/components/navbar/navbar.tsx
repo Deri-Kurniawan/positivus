@@ -1,4 +1,5 @@
 import { ComponentProps, forwardRef } from "react";
+import { mcn } from "../../lib/utils";
 import Button from "../button/button";
 import {
   IconHamburger,
@@ -13,9 +14,7 @@ type NavbarProps = {
 
 const Navbar = forwardRef<HTMLDivElement, NavbarProps>(
   ({ data = [], ...restProps }, ref) => {
-    const className = [styles.navbar, restProps.className]
-      .filter(Boolean)
-      .join(" ");
+    const className = mcn([styles.navbar, restProps.className]);
 
     return (
       <nav {...{ ref, ...restProps, className }}>

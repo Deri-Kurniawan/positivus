@@ -1,4 +1,5 @@
 import { forwardRef, HTMLAttributes } from "react";
+import { mcn } from "../../../lib/utils";
 import ButtonIcon from "../../button-icon/button-icon";
 import Card from "../../card/card";
 import Heading from "../../heading/heading";
@@ -6,17 +7,18 @@ import { IconMinus, IconPlus } from "../../icons";
 import Typography from "../../typography/typography";
 import styles from "./our-working-process-section.module.css";
 
-interface OurWorkingProcessSectionProps extends HTMLAttributes<HTMLDivElement> {
+type OurWorkingProcessSectionProps = {
   data: TWorkingProcess[];
-}
+} & HTMLAttributes<HTMLDivElement>;
 
 const OurWorkingProcessSection = forwardRef<
   HTMLDivElement,
   OurWorkingProcessSectionProps
 >(({ data, ...restProps }, ref) => {
-  const className = [styles["our-working-process-section"], restProps.className]
-    .filter(Boolean)
-    .join(" ");
+  const className = mcn([
+    styles["our-working-process-section"],
+    restProps.className,
+  ]);
 
   return (
     <section {...{ ref, ...restProps, className }}>

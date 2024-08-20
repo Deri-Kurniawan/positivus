@@ -1,4 +1,5 @@
 import { forwardRef, HTMLAttributes } from "react";
+import { mcn } from "../../../lib/utils";
 import ButtonIcon from "../../button-icon/button-icon";
 import Card from "../../card/card";
 import Heading from "../../heading/heading";
@@ -14,15 +15,13 @@ export type TCaseStudy = {
   };
 };
 
-interface CaseStudiesSectionProps extends HTMLAttributes<HTMLDivElement> {
+type CaseStudiesSectionProps = {
   data: TCaseStudy[];
-}
+} & HTMLAttributes<HTMLDivElement>;
 
 const CaseStudiesSection = forwardRef<HTMLDivElement, CaseStudiesSectionProps>(
   ({ data, ...restProps }, ref) => {
-    const className = [styles["case-studies"], restProps.className]
-      .filter(Boolean)
-      .join(" ");
+    const className = mcn([styles["case-studies"], restProps.className]);
 
     return (
       <section {...{ ref, ...restProps, className }}>

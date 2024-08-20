@@ -1,4 +1,5 @@
 import { forwardRef, HTMLAttributes } from "react";
+import { mcn } from "../../../lib/utils";
 import ButtonIcon from "../../button-icon/button-icon";
 import Card from "../../card/card";
 import Heading from "../../heading/heading";
@@ -6,15 +7,13 @@ import { IconArrow } from "../../icons";
 import Typography from "../../typography/typography";
 import styles from "./services-section.module.css";
 
-interface ServicesSectionProps extends HTMLAttributes<HTMLDivElement> {
+type ServicesSectionProps = {
   data: TService[];
-}
+} & HTMLAttributes<HTMLDivElement>;
 
 const ServicesSection = forwardRef<HTMLDivElement, ServicesSectionProps>(
   ({ data, ...restProps }, ref) => {
-    const className = [styles["services-section"], restProps.className]
-      .filter(Boolean)
-      .join(" ");
+    const className = mcn([styles["services-section"], restProps.className]);
 
     return (
       <section {...{ ref, ...restProps, className }}>
@@ -48,7 +47,10 @@ const ServicesSection = forwardRef<HTMLDivElement, ServicesSectionProps>(
                 </div>
 
                 <ButtonIcon
-                  className={`${styles["services-section__button"]} ${styles["services-section__button--desktop"]}`}
+                  className={mcn([
+                    styles["services-section__button"],
+                    styles["services-section__button--desktop"],
+                  ])}
                   icon={
                     <IconArrow
                       className={styles["services-section__button__icon"]}
@@ -64,7 +66,10 @@ const ServicesSection = forwardRef<HTMLDivElement, ServicesSectionProps>(
               </div>
               <div className={styles["services-section__image-wrapper"]}>
                 <ButtonIcon
-                  className={`${styles["services-section__button"]} ${styles["services-section__button--mobile"]}`}
+                  className={mcn([
+                    styles["services-section__button"],
+                    styles["services-section__button--mobile"],
+                  ])}
                   icon={<IconArrow />}
                   variant={service.button?.variant}
                   aria-label="Learn more"

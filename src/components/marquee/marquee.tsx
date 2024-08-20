@@ -1,5 +1,14 @@
 import { cva, VariantProps } from "class-variance-authority";
-import React, { forwardRef, ReactNode, useCallback } from "react";
+import {
+  Children,
+  cloneElement,
+  forwardRef,
+  HTMLAttributes,
+  ReactElement,
+  ReactNode,
+  useCallback,
+} from "react";
+import { mcn } from "../../lib/utils";
 import styles from "./marquee.module.css";
 
 const marqueeCva = cva(styles.marquee, {
@@ -28,16 +37,16 @@ type MarqueeProps = {
    * @default 25 seconds
    */
   speed?: number;
-} & React.HTMLAttributes<HTMLDivElement> &
+} & HTMLAttributes<HTMLDivElement> &
   VariantProps<typeof marqueeCva>;
 
 const duplicateChildren = (children: ReactNode, times: number) => {
-  const childArray = React.Children.toArray(children);
+  const childArray = Children.toArray(children);
   const duplicatedChildren = [];
   for (let i = 0; i < times; i++) {
     duplicatedChildren.push(
       ...childArray.map((child, index) =>
-        React.cloneElement(child as React.ReactElement, {
+        cloneElement(child as ReactElement, {
           key: `child-${i}-${index}`,
         })
       )
@@ -57,14 +66,12 @@ const Marquee = forwardRef<HTMLDivElement, MarqueeProps>(
     },
     ref
   ) => {
-    const className = [
+    const className = mcn([
       marqueeCva({ direction, pauseOnHover }),
       restProps.className,
-    ]
-      .filter(Boolean)
-      .join(" ");
+    ]);
 
-    const childArray = React.Children.toArray(children);
+    const childArray = Children.toArray(children);
     const childCount = childArray.length;
 
     let duplicatedChildren;

@@ -1,4 +1,5 @@
 import { forwardRef, HTMLAttributes } from "react";
+import { mcn } from "../../../lib/utils";
 import ButtonIcon from "../../button-icon/button-icon";
 import Button from "../../button/button";
 import Card from "../../card/card";
@@ -7,15 +8,13 @@ import { IconLinkedIn } from "../../icons";
 import Typography from "../../typography/typography";
 import styles from "./team-section.module.css";
 
-interface TeamSectionProps extends HTMLAttributes<HTMLDivElement> {
+type TeamSectionProps = {
   data: TTeam[];
-}
+} & HTMLAttributes<HTMLDivElement>;
 
 const TeamSection = forwardRef<HTMLDivElement, TeamSectionProps>(
   ({ data, ...restProps }, ref) => {
-    const className = [styles["team-section"], restProps.className]
-      .filter(Boolean)
-      .join(" ");
+    const className = mcn([styles["team-section"], restProps.className]);
 
     return (
       <section {...{ ref, ...restProps, className }}>

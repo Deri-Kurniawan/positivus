@@ -1,12 +1,14 @@
 import { cva, VariantProps } from "class-variance-authority";
-import React, {
+import {
   ButtonHTMLAttributes,
   cloneElement,
   FC,
   forwardRef,
   LegacyRef,
+  ReactElement,
   ReactNode,
 } from "react";
+import { mcn } from "../../lib/utils";
 import styles from "./button.module.css";
 
 const buttonClasses = cva(styles.button, {
@@ -33,21 +35,17 @@ const Button: FC<ButtonProps> = forwardRef(
     { asChild, children, variant, ...restProps },
     ref: LegacyRef<HTMLButtonElement>
   ) => {
-    const className = [buttonClasses({ variant }), restProps.className]
-      .filter(Boolean)
-      .join(" ");
+    const className = mcn([buttonClasses({ variant }), restProps.className]);
 
     if (asChild) {
       if (typeof children === "string")
         throw new Error(
           "Children must be a React element when using the `asChild` prop."
         );
-      return cloneElement(children as React.ReactElement, {
+      return cloneElement(children as ReactElement, {
         ref,
         ...restProps,
-        className: [className, (children as React.ReactElement).props.className]
-          .filter(Boolean)
-          .join(" "),
+        className: mcn([className, (children as ReactElement).props.className]),
       });
     }
 

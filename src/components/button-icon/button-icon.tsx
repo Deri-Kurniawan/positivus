@@ -1,12 +1,14 @@
 import { cva, VariantProps } from "class-variance-authority";
-import React, {
+import {
   ButtonHTMLAttributes,
   cloneElement,
   FC,
   forwardRef,
   LegacyRef,
+  ReactElement,
   ReactNode,
 } from "react";
+import { mcn } from "../../lib/utils";
 import styles from "./button-icon.module.css";
 
 const buttonClasses = cva(styles["button-icon"], {
@@ -57,33 +59,29 @@ const ButtonIcon: FC<ButtonIconProps> = forwardRef(
     },
     ref: LegacyRef<HTMLButtonElement>
   ) => {
-    const className = [
+    const className = mcn([
       buttonClasses({
         variant,
         iconOnly,
         rotateArrowAnimation,
       }),
       restProps.className,
-    ]
-      .filter(Boolean)
-      .join(" ");
+    ]);
 
     if (asChild) {
       if (typeof children === "string")
         throw new Error(
           "Children must be a React element when using the `asChild` prop."
         );
-      return cloneElement(children as React.ReactElement, {
+      return cloneElement(children as ReactElement, {
         ...restProps,
         ref,
-        className: [className, (children as React.ReactElement).props.className]
-          .filter(Boolean)
-          .join(" "),
+        className: mcn([className, (children as ReactElement).props.className]),
         children: (
           <>
             <div className={styles["button-icon__icon"]}>{icon}</div>
             <span className={styles["button-icon__label"]}>
-              {(children as React.ReactElement).props.children}
+              {(children as ReactElement).props.children}
             </span>
           </>
         ),

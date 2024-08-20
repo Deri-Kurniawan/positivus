@@ -1,4 +1,5 @@
-import { forwardRef } from "react";
+import { forwardRef, HTMLAttributes } from "react";
+import { mcn } from "../../../lib/utils";
 import Marquee from "../../marquee/marquee";
 import styles from "./company-section.module.css";
 
@@ -8,19 +9,21 @@ export type TCompany = {
   url: string;
 };
 
-interface CompanySectionProps extends React.HTMLAttributes<HTMLDivElement> {
+type CompanySectionProps = {
   data: TCompany[];
-}
+} & HTMLAttributes<HTMLDivElement>;
 
 const CompanySection = forwardRef<HTMLDivElement, CompanySectionProps>(
   ({ data, ...restProps }, ref) => {
-    const className = [styles.company, restProps.className]
-      .filter(Boolean)
-      .join(" ");
+    const className = mcn([styles["company-section"], restProps.className]);
 
     return (
       <section {...{ ref, ...restProps, className }}>
-        <Marquee className={styles["company__list"]} speed={50} pauseOnHover>
+        <Marquee
+          className={styles["company-section__list"]}
+          speed={50}
+          pauseOnHover
+        >
           {data.map(({ image, alt, url }) => (
             <a key={alt} href={url} target="_blank" rel="noreferrer">
               <img src={image} alt={alt} />
@@ -28,7 +31,7 @@ const CompanySection = forwardRef<HTMLDivElement, CompanySectionProps>(
           ))}
         </Marquee>
         <Marquee
-          className={styles["company__list"]}
+          className={styles["company-section__list"]}
           speed={50}
           direction="to-right"
           pauseOnHover

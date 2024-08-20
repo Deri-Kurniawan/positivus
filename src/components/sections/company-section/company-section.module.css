@@ -1,41 +1,41 @@
-.company {
+.company-section {
   padding: 0;
 }
 
-.company__list {
+.company-section__list {
   --c-marquee-item-gap: 37px;
 }
 
-.company__list img {
+.company-section__list img {
   filter: grayscale(1);
   transition: filter 0.3s;
 }
 
-.company__list img:hover {
+.company-section__list img:hover {
   filter: grayscale(0);
   transition: filter 0.3s;
 }
 
-.company__list:last-child {
+.company-section__list:last-child {
   margin-top: 20px;
 }
 
 @media (min-width: 768px) {
-  .company {
+  .company-section {
     padding: 0 var(--container);
   }
 }
 
 @media (min-width: 1366px) {
-  .company {
+  .company-section {
     padding: 0 var(--container);
   }
 
-  .company__list {
+  .company-section__list {
     --c-marquee-item-gap: 96px;
   }
 
-  .company__list:last-child {
+  .company-section__list:last-child {
     display: none;
   }
 }

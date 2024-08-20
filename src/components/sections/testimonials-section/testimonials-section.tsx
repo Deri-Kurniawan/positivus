@@ -7,23 +7,22 @@ import {
   useEffect,
   useState,
 } from "react";
+import { mcn } from "../../../lib/utils";
 import Card from "../../card/card";
 import Heading from "../../heading/heading";
 import { IconArrow, IconPositivus } from "../../icons";
 import Typography from "../../typography/typography";
 import styles from "./testimonials-section.module.css";
 
-interface TestimonialsSectionProps extends HTMLAttributes<HTMLDivElement> {
+type TestimonialsSectionProps = {
   data: TTestimonial[];
-}
+} & HTMLAttributes<HTMLDivElement>;
 
 const TestimonialsSection = forwardRef<
   HTMLDivElement,
   TestimonialsSectionProps
 >(({ data, ...restProps }, ref) => {
-  const className = [styles["testimonials-section"], restProps.className]
-    .filter(Boolean)
-    .join(" ");
+  const className = mcn([styles["testimonials-section"], restProps.className]);
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {
@@ -139,7 +138,11 @@ const TestimonialsSection = forwardRef<
             {data.map((_, i) => (
               <IconPositivus
                 key={`indicator-${i}`}
-                className={`${styles["testimonials-section__indicator"]} ${emblaApi?.selectedScrollSnap() === i && styles["testimonials-section__indicator--active"]}`}
+                className={mcn([
+                  styles["testimonials-section__indicator"],
+                  emblaApi?.selectedScrollSnap() === i &&
+                    styles["testimonials-section__indicator--active"],
+                ])}
                 onClick={() => emblaApi?.scrollTo(--i)}
                 aria-label={`Testimonial Indicator ${++i}`}
               />
