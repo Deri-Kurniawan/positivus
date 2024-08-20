@@ -12,7 +12,7 @@ const HeroSection = forwardRef<HTMLDivElement, HeroSectionProps>(
       .join(" ");
 
     return (
-      <section {...{ ref, ...restProps, className: className }}>
+      <section {...{ ref, ...restProps, className }}>
         <div className={styles["hero__content"]}>
           <h2
             className={`${styles["hero__content__title"]} ${styles["hero__content__title--desktop"]}`}

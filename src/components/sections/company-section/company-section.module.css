@@ -1,0 +1,41 @@
+.company {
+  padding: 0;
+}
+
+.company__list {
+  --c-marquee-item-gap: 37px;
+}
+
+.company__list img {
+  filter: grayscale(1);
+  transition: filter 0.3s;
+}
+
+.company__list img:hover {
+  filter: grayscale(0);
+  transition: filter 0.3s;
+}
+
+.company__list:last-child {
+  margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+  .company {
+    padding: 0 var(--container);
+  }
+}
+
+@media (min-width: 1366px) {
+  .company {
+    padding: 0 var(--container);
+  }
+
+  .company__list {
+    --c-marquee-item-gap: 96px;
+  }
+
+  .company__list:last-child {
+    display: none;
+  }
+}
