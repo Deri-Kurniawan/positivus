@@ -1,0 +1,40 @@
+.hero-section {
+  margin-top: 10px;
+}
+
+.company-section,
+.services-section,
+.case-studies-section,
+.our-working-process-section,
+.team-section,
+.testimonials-section,
+.contact-us-section {
+  margin-top: 60px;
+}
+
+.cta-section {
+  margin-top: 70.53px;
+}
+
+@media (min-width: 1366px) {
+  .hero-section {
+    padding-bottom: 34px;
+  }
+
+  .company-section {
+    margin-top: 70px;
+  }
+
+  .services-section,
+  .case-studies-section,
+  .our-working-process-section,
+  .team-section,
+  .contact-us-section {
+    margin-top: 140px;
+  }
+
+  .cta-section,
+  .testimonials-section {
+    margin-top: 100px;
+  }
+}
