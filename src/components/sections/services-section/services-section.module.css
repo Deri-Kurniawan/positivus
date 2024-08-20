@@ -63,6 +63,14 @@
   }
 }
 
+@media (min-width: 768px) {
+  .services-section__image {
+    width: auto;
+    height: 150px;
+    object-fit: cover;
+  }
+}
+
 @media (min-width: 1366px) {
   .services-section__header {
     flex-direction: row;
@@ -86,6 +94,12 @@
 
   .services-section__content {
     gap: 93px;
+  }
+
+  .services-section__image {
+    width: auto;
+    height: 170px;
+    object-fit: cover;
   }
 
   .services-section__button--mobile {
