@@ -21,29 +21,32 @@ type CaseStudiesSectionProps = {
 
 const CaseStudiesSection = forwardRef<HTMLDivElement, CaseStudiesSectionProps>(
   ({ data, ...restProps }, ref) => {
-    const className = mcn([styles["case-studies"], restProps.className]);
+    const className = mcn([
+      styles["case-studies-section"],
+      restProps.className,
+    ]);
 
     return (
       <section {...{ ref, ...restProps, className }}>
-        <div className={styles["case-studies__header"]}>
+        <div className={styles["case-studies-section__header"]}>
           <Heading level={2}>Case Studies</Heading>
-          <Typography className={styles["case-studies__description"]}>
+          <Typography className={styles["case-studies-section__description"]}>
             Explore Real-Life Examples of Our Proven Digital Marketing Success
             through Our Case Studies
           </Typography>
         </div>
-        <div className={styles["case-studies__list"]}>
+        <div className={styles["case-studies-section__list"]}>
           {data.map(({ content, link }) => (
             <Card
               key={content}
-              className={styles["case-studies__item"]}
+              className={styles["case-studies-section__item"]}
               variant="secondary"
             >
-              <Typography className={styles["case-studies__content"]}>
+              <Typography className={styles["case-studies-section__content"]}>
                 {content}
               </Typography>
               <ButtonIcon
-                className={styles["case-studies__button"]}
+                className={styles["case-studies-section__button"]}
                 variant="primary-plain"
                 icon={<IconArrow />}
                 asChild
