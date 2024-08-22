@@ -11,11 +11,8 @@ const meta = {
     layout: "centered",
     backgrounds: {
       default: "blue",
-      values: [{ name: "blue", value: "#00aced" }],
     },
   },
-  tags: ["autodocs"],
-  argTypes: {},
   args: {
     variant: "primary",
     asChild: false,

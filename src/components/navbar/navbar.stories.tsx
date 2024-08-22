@@ -8,9 +8,11 @@ import styles from "./navbar.module.css";
 const meta = {
   title: "Components/Navbar",
   component: Navbar,
-  parameters: {},
-  tags: ["autodocs"],
-  argTypes: {},
+  parameters: {
+    viewport: {
+      defaultViewport: "desktop",
+    },
+  },
   args: {
     data: data.navlinks,
   },
@@ -21,7 +23,6 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {},
   decorators: [
     (Story) => (
       <div style={{ width: "100%" }}>

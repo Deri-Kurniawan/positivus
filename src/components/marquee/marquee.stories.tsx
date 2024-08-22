@@ -13,8 +13,6 @@ const meta = {
   title: "Components/Marquee",
   component: Marquee,
   parameters: {},
-  tags: ["autodocs"],
-  argTypes: {},
   args: {
     speed: 25,
     direction: "to-left",

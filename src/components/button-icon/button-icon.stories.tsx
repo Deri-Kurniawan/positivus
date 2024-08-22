@@ -10,12 +10,7 @@ const meta = {
   component: ButtonIcon,
   parameters: {
     layout: "centered",
-    backgrounds: {
-      default: "blue",
-      values: [{ name: "blue", value: "#00aced" }],
-    },
   },
-  tags: ["autodocs"],
   argTypes: {
     asChild: { control: "boolean" },
   },
@@ -147,6 +142,11 @@ export const Secondary: Story = {
 };
 
 export const SecondaryAlt: Story = {
+  parameters: {
+    backgrounds: {
+      default: "blue",
+    },
+  },
   args: {
     variant: "secondary-alt",
     icon: <IconArrow />,
@@ -186,6 +186,11 @@ export const SecondaryAlt: Story = {
 };
 
 export const Ghost: Story = {
+  parameters: {
+    backgrounds: {
+      default: "blue",
+    },
+  },
   args: {
     variant: "ghost",
     icon: <IconArrow />,
@@ -225,6 +230,11 @@ export const Ghost: Story = {
 };
 
 export const GhostAlt: Story = {
+  parameters: {
+    backgrounds: {
+      default: "blue",
+    },
+  },
   args: {
     variant: "ghost-alt",
     icon: <IconArrow />,
@@ -264,6 +274,11 @@ export const GhostAlt: Story = {
 };
 
 export const Outline: Story = {
+  parameters: {
+    backgrounds: {
+      default: "blue",
+    },
+  },
   args: {
     variant: "outline",
     icon: <IconArrow />,
@@ -325,6 +340,11 @@ export const AsChild: Story = {
 };
 
 export const PrimaryPlain: Story = {
+  parameters: {
+    backgrounds: {
+      default: "blue",
+    },
+  },
   args: {
     variant: "primary-plain",
     icon: <IconArrow />,
@@ -364,6 +384,11 @@ export const PrimaryPlain: Story = {
 };
 
 export const SecondaryPlain: Story = {
+  parameters: {
+    backgrounds: {
+      default: "blue",
+    },
+  },
   args: {
     variant: "secondary-plain",
     icon: <IconArrow />,
@@ -403,6 +428,11 @@ export const SecondaryPlain: Story = {
 };
 
 export const GhostPlain: Story = {
+  parameters: {
+    backgrounds: {
+      default: "blue",
+    },
+  },
   args: {
     variant: "ghost-plain",
     icon: <IconArrow />,
@@ -442,6 +472,11 @@ export const GhostPlain: Story = {
 };
 
 export const AsChildPlain: Story = {
+  parameters: {
+    backgrounds: {
+      default: "blue",
+    },
+  },
   args: {
     variant: "primary-plain",
     icon: <IconArrow />,

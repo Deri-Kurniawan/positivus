@@ -7,13 +7,7 @@ const meta = {
   component: Heading,
   parameters: {
     layout: "centered",
-    backgrounds: {
-      default: "blue",
-      values: [{ name: "blue", value: "#00aced" }],
-    },
   },
-  tags: ["autodocs"],
-  argTypes: {},
   args: {
     variant: "primary",
     children: "Label",

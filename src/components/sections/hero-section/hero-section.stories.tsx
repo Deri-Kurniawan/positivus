@@ -1,17 +1,18 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { expect } from "@storybook/test";
-import Hero from "./hero-section";
+import HeroSection from "./hero-section";
 import styles from "./hero-section.module.css";
 
 const meta = {
   title: "Components/Sections/HeroSection",
-  component: Hero,
-  parameters: {},
-  tags: ["autodocs"],
-  argTypes: {},
-  args: {},
-} satisfies Meta<typeof Hero>;
+  component: HeroSection,
+  parameters: {
+    viewport: {
+      defaultViewport: "desktop",
+    },
+  },
+} satisfies Meta<typeof HeroSection>;
 
 export default meta;
 
@@ -21,7 +22,7 @@ export const Default: Story = {
   play: async ({ canvasElement, step }) => {
     await step("Render the hero", async () => {
       const div = canvasElement.querySelector("section");
-      expect(div).toHaveClass(styles["hero"]);
+      expect(div).toHaveClass(styles["hero-section"]);
     });
   },
 };
