@@ -39,10 +39,15 @@ const formSchema = z.object({
   message: z.string().min(1, "Message is required"),
 });
 
-type ContactUsSectionProps = HTMLAttributes<HTMLDivElement>;
+type ContactUsSectionProps = {
+  /**
+   * Only for storybook demo purposes
+   */
+  demoStory?: boolean;
+} & HTMLAttributes<HTMLDivElement>;
 
 const ContactUsSection = forwardRef<HTMLDivElement, ContactUsSectionProps>(
-  ({ ...restProps }, ref) => {
+  ({ demoStory, ...restProps }, ref) => {
     const [contactTypeStateId, setContactTypeStateId] = useState<
       (typeof contactTypes)[number]["id"]
     >(contactTypes[0].id);
@@ -62,6 +67,8 @@ const ContactUsSection = forwardRef<HTMLDivElement, ContactUsSectionProps>(
 
     const handleSubmit = async (values: z.infer<typeof formSchema>) => {
       if (!form.formState.isValid) return;
+      if (demoStory)
+        return alert(`Form Values:\n${JSON.stringify(values, null, 2)}`);
 
       const { contactType: type, name, email, message } = values;
       const apiUri = "https://66c3d83bd057009ee9c1554a.mockapi.io/deri/dzr/api";

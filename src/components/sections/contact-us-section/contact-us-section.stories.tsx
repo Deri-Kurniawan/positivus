@@ -1,20 +1,19 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import data from "../../data";
-import Navbar from "./navbar";
+import ContactUsSection from "./contact-us-section";
 
 const meta = {
-  title: "Components/Navbar",
-  component: Navbar,
+  title: "Components/Sections/ContactUsSection",
+  component: ContactUsSection,
   parameters: {
     viewport: {
       defaultViewport: "desktop",
     },
   },
   args: {
-    data: data.navlinks,
+    demoStory: true,
   },
-} satisfies Meta<typeof Navbar>;
+} satisfies Meta<typeof ContactUsSection>;
 
 export default meta;
 

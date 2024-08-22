@@ -1,20 +1,16 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import data from "../../data";
-import Navbar from "./navbar";
+import CtaSection from "../cta-section/cta-section";
 
 const meta = {
-  title: "Components/Navbar",
-  component: Navbar,
+  title: "Components/Sections/CtaSection",
+  component: CtaSection,
   parameters: {
     viewport: {
       defaultViewport: "desktop",
     },
   },
-  args: {
-    data: data.navlinks,
-  },
-} satisfies Meta<typeof Navbar>;
+} satisfies Meta<typeof CtaSection>;
 
 export default meta;
 

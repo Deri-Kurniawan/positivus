@@ -1,23 +1,25 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import data from "../../data";
-import Navbar from "./navbar";
+import Footer from "./footer";
 
 const meta = {
-  title: "Components/Navbar",
-  component: Navbar,
+  title: "Components/Footer",
+  component: Footer,
   parameters: {
     viewport: {
       defaultViewport: "desktop",
     },
   },
-  args: {
-    data: data.navlinks,
-  },
-} satisfies Meta<typeof Navbar>;
+} satisfies Meta<typeof Footer>;
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+export const Default: Story = {
+  args: {
+    navLinks: data.navlinks,
+    socialMedia: data.socialMedia,
+  },
+};
