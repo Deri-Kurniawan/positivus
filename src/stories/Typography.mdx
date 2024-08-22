@@ -1,0 +1,60 @@
+{/* Typography.mdx */}
+
+import { Meta, Typeset } from '@storybook/blocks';
+
+<Meta title="Typography" />
+
+export const typography = {
+  type: {
+    primary: '"Space Grotesk", sans-serif',
+  },
+  size: {
+    m1: 16 * 2.6875,
+    m2: 16 * 2.25,
+    m3: 16 * 1.625,
+    m4: 16 * 1.125,
+    mp: 16 * 1,
+    d1: 16 * 3.75,
+    d2: 16 * 2.5,
+    d3: 16 * 1.875,
+    d4: 16 * 1.5,
+    dp: 16 * 1.125,
+  },
+};
+
+
+# Typography
+
+**Font:** [Space Grotesk](https://floriankarsten.github.io/space-grotesk/)
+
+**Weights:** 400, 500
+
+## Mobile
+
+Typography for mobile devices.
+
+<Typeset
+  fontSizes={[
+    Number(typography.size["m1"]),
+    Number(typography.size["m2"]),
+    Number(typography.size["m3"]),
+    Number(typography.size["m4"]),
+    Number(typography.size["mp"]),
+  ]}
+  fontFamily={typography.type.primary}
+/>
+
+## Desktop
+
+Typography for desktop devices.
+
+<Typeset
+  fontSizes={[
+    Number(typography.size["d1"]),
+    Number(typography.size["d2"]),
+    Number(typography.size["d3"]),
+    Number(typography.size["d4"]),
+    Number(typography.size["dp"]),
+  ]}
+  fontFamily={typography.type.primary}
+/>
