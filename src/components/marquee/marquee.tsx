@@ -14,7 +14,7 @@ import styles from "./marquee.module.css";
 const marqueeCva = cva(styles.marquee, {
   variants: {
     pauseOnHover: {
-      true: styles["marquee--hover-on-pause"],
+      true: styles["marquee--pause-on-hover"],
     },
     direction: {
       "to-left": styles["marquee--direction-to-left"],

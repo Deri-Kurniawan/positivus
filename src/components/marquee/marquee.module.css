@@ -8,7 +8,7 @@
   overflow: hidden;
 }
 
-.marquee--hover-on-pause:hover .marquee__wrapper__item {
+.marquee--pause-on-hover:hover .marquee__wrapper__item {
   animation-play-state: paused;
 }
 
