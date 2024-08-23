@@ -5,12 +5,17 @@
   gap: 16px;
   width: 100%;
   padding: 30px var(--container);
+  position: sticky;
+  top: 0;
+  background-color: hsl(var(--color-white));
+  z-index: 100;
 }
 
 .navbar__brand {
   display: flex;
   align-items: center;
   gap: 8.47px;
+  z-index: 101;
 }
 
 .navbar__brand__icon {
@@ -24,7 +29,7 @@
 }
 
 /* button */
-.navbar__hamburger {
+.navbar__toggle-menu {
   margin: 0;
   padding: 0;
   border: none;
@@ -32,6 +37,7 @@
   width: fit-content;
   height: fit-content;
   cursor: pointer;
+  z-index: 101;
 }
 
 .navbar__list {
@@ -46,10 +52,84 @@
   font-family: var(--font-family);
 }
 
+.navbar__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  max-height: 100vh;
+  padding-left: var(--container);
+  padding-right: var(--container);
+  padding-bottom: 32px;
+  background-color: hsl(var(--color-white));
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+  overflow-y: auto;
+  z-index: 99;
+}
+
+.navbar__menu--open {
+  transform: translateY(0);
+}
+
+.navbar__menu__list {
+  all: unset;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: center;
+  list-style: none;
+}
+
+.navbar__list__item {
+  width: fit-content;
+}
+
+.navbar__list__item > a {
+  text-decoration: none;
+  color: hsl(var(--color-black));
+}
+
+.navbar__list__item > a:hover {
+  color: hsla(var(--color-black), 0.8);
+}
+
+.navbar__background-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: hsla(var(--color-black), 0.2);
+  backdrop-filter: blur(4px);
+  z-index: 98;
+  animation: fadeIn 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.navbar__background-overlay--open {
+  display: block;
+}
+
 @media (min-width: 1366px) {
   .navbar {
     margin: 60px 0;
     padding: 0 var(--container);
+    position: relative;
+    top: auto;
+    background-color: unset;
   }
 
   .navbar__brand {
@@ -66,7 +146,7 @@
     height: 29px;
   }
 
-  .navbar__hamburger {
+  .navbar__toggle-menu {
     display: none;
   }
 
@@ -91,5 +171,9 @@
 
   .navbar__list__cta {
     display: flex;
+  }
+
+  .navbar__menu {
+    display: none !important;
   }
 }
