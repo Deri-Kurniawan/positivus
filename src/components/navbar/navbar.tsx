@@ -55,7 +55,11 @@ const Navbar = ({ data = [], ...restProps }: NavbarProps) => {
         }}
         aria-label="Main navigation"
       >
-        <a className={styles["navbar__brand"]} href="/">
+        <a
+          className={styles["navbar__brand"]}
+          href="/"
+          aria-label="Go to home page"
+        >
           <IconPositivus className={styles["navbar__brand__icon"]} />
           <IconPositivusTypography
             className={styles["navbar__brand__icon-text"]}

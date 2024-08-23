@@ -28,6 +28,7 @@ const formSchema = z.object({
   name: z
     .string()
     .regex(/^[a-zA-Z\s]*$/, "Name must contain only letters")
+    .max(50, "Name is too long")
     .default(""),
   email: z
     .string()
@@ -35,8 +36,12 @@ const formSchema = z.object({
     .regex(
       /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
       "Invalid email address"
-    ),
-  message: z.string().min(1, "Message is required"),
+    )
+    .max(50, "Email is too long"),
+  message: z
+    .string()
+    .min(1, "Message is required")
+    .max(500, "Message is too long"),
 });
 
 type ContactUsSectionProps = {
@@ -67,8 +72,7 @@ const ContactUsSection = forwardRef<HTMLDivElement, ContactUsSectionProps>(
 
     const handleSubmit = async (values: z.infer<typeof formSchema>) => {
       if (!form.formState.isValid) return;
-      if (demoStory)
-        return alert(`Form Values:\n${JSON.stringify(values, null, 2)}`);
+      if (demoStory) return console.log("Contact Us Form Data:", values);
 
       const { contactType: type, name, email, message } = values;
       const apiUri = "https://66c3d83bd057009ee9c1554a.mockapi.io/deri/dzr/api";
@@ -155,6 +159,7 @@ const ContactUsSection = forwardRef<HTMLDivElement, ContactUsSectionProps>(
                           setContactTypeStateId(type.id);
                         }}
                         checked={contactTypeStateId === type.id}
+                        data-testid={`contact-type-${type.id}`}
                       />
                       <label
                         htmlFor={type.id}
@@ -185,6 +190,7 @@ const ContactUsSection = forwardRef<HTMLDivElement, ContactUsSectionProps>(
                   {form.formState.errors.contactType && (
                     <Typography
                       className={styles["contact-us-section__error-message"]}
+                      data-testid="error-contact-type"
                     >
                       {form.formState.errors.contactType.message}
                     </Typography>
@@ -204,10 +210,12 @@ const ContactUsSection = forwardRef<HTMLDivElement, ContactUsSectionProps>(
                       type="text"
                       id="name"
                       placeholder="Name"
+                      data-testid="name"
                     />
                     {form.formState.errors.name && (
                       <Typography
                         className={styles["contact-us-section__error-message"]}
+                        data-testid="error-name"
                       >
                         {form.formState.errors.name.message}
                       </Typography>
@@ -227,10 +235,12 @@ const ContactUsSection = forwardRef<HTMLDivElement, ContactUsSectionProps>(
                       id="email"
                       placeholder="Email"
                       autoComplete="email"
+                      data-testid="email"
                     />
                     {form.formState.errors.email && (
                       <Typography
                         className={styles["contact-us-section__error-message"]}
+                        data-testid="error-email"
                       >
                         {form.formState.errors.email.message}
                       </Typography>
@@ -249,10 +259,12 @@ const ContactUsSection = forwardRef<HTMLDivElement, ContactUsSectionProps>(
                       id="message"
                       rows={5}
                       placeholder="Message"
+                      data-testid="message"
                     />
                     {form.formState.errors.message && (
                       <Typography
                         className={styles["contact-us-section__error-message"]}
+                        data-testid="error-message"
                       >
                         {form.formState.errors.message.message}
                       </Typography>
@@ -266,6 +278,7 @@ const ContactUsSection = forwardRef<HTMLDivElement, ContactUsSectionProps>(
                   disabled={
                     form.formState.isSubmitting || !form.formState.isValid
                   }
+                  data-testid="submit-button-desktop"
                 >
                   {form.formState.isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
@@ -279,6 +292,7 @@ const ContactUsSection = forwardRef<HTMLDivElement, ContactUsSectionProps>(
               type="submit"
               variant="secondary"
               disabled={form.formState.isSubmitting || !form.formState.isValid}
+              data-testid="submit-button-mobile"
             >
               {form.formState.isSubmitting ? "Sending..." : "Send Message"}
             </Button>
