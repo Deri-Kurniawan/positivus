@@ -1,10 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import companyAmazon from "../../assets/images/company-amazon.png";
-import companyDribbble from "../../assets/images/company-dribbble.png";
-import companyNetflix from "../../assets/images/company-netflix.png";
-import companyNotion from "../../assets/images/company-notion.png";
-import companyZoom from "../../assets/images/company-zoom.png";
+import data from "../../data";
 import Marquee from "./marquee";
 
 const meta = {
@@ -21,32 +17,13 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-const marqueeDataExample = [
-  {
-    image: companyAmazon,
-    alt: "Amazon",
-  },
-  {
-    image: companyDribbble,
-    alt: "Dribbble",
-  },
-  {
-    image: companyNetflix,
-    alt: "Netflix",
-  },
-  {
-    image: companyNotion,
-    alt: "Notion",
-  },
-  {
-    image: companyZoom,
-    alt: "Zoom",
-  },
-];
+const marqueeDataExample = [...data.companies];
 
-const ExampleChildren = marqueeDataExample.map(({ image, alt }) => (
-  <img key={alt} src={image} alt={alt} />
-));
+const ExampleChildren = marqueeDataExample.map(
+  ({ image, width, height, alt }) => (
+    <img key={alt} {...{ src: image, width, height, alt }} />
+  )
+);
 
 export const Default: Story = {
   args: {
@@ -79,6 +56,17 @@ export const PauseOnHover: Story = {
 export const ALittleContent: Story = {
   args: {
     speed: 25,
-    children: <img src={companyAmazon} alt="Amazon" />,
+    children: (
+      <img
+        style={{
+          height: 48,
+          width: "auto",
+        }}
+        src={data.companies[0].image}
+        width={data.companies[0].width}
+        height={data.companies[0].height}
+        alt={data.companies[0].alt}
+      />
+    ),
   },
 };

@@ -7,14 +7,6 @@ import { IconArrow } from "../../icons";
 import Typography from "../../typography/typography";
 import styles from "./case-studies-section.module.css";
 
-export type TCaseStudy = {
-  content: string;
-  link: {
-    text: string;
-    path: string;
-  };
-};
-
 type CaseStudiesSectionProps = {
   data: TCaseStudy[];
 } & HTMLAttributes<HTMLDivElement>;

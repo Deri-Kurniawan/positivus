@@ -1,5 +1,5 @@
 import { forwardRef, HTMLAttributes } from "react";
-import heroMegaphoneImage from "../../../assets/images/hero-megaphone.png";
+import heroMegaphoneImage from "../../../assets/images/hero-megaphone.webp";
 import { mcn } from "../../../lib/utils";
 import Button from "../../button/button";
 import styles from "./hero-section.module.css";
@@ -37,9 +37,13 @@ const HeroSection = forwardRef<HTMLDivElement, HeroSectionProps>(
           <img
             className={styles["hero-section__illustration__image"]}
             src={heroMegaphoneImage}
-            alt="megaphone"
             width={600.46}
             height={515}
+            alt="megaphone"
+            loading="eager"
+            srcSet={`${heroMegaphoneImage} 400w, ${heroMegaphoneImage} 600w, ${heroMegaphoneImage} 800w`}
+            sizes="(max-width: 600px) 100vw, 600px"
+            decoding="async"
           />
         </div>
         <h2

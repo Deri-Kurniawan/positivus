@@ -100,13 +100,17 @@
   font-family: var(--font-family);
   font-size: 1rem;
   font-weight: 400;
-  color: #898989;
 }
 
 textarea.contact-us-section__input {
   resize: vertical;
   height: 132px;
   min-height: 61px;
+}
+
+.contact-us-section__input::placeholder,
+textarea.contact-us-section__input::placeholder {
+  color: hsl(var(--color-black));
 }
 
 .contact-us-section__error-message {

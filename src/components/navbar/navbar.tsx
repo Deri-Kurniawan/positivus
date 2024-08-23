@@ -24,7 +24,7 @@ const Navbar = forwardRef<HTMLDivElement, NavbarProps>(
             className={styles["navbar__brand__icon-text"]}
           />
         </div>
-        <button className={styles["navbar__hamburger"]}>
+        <button className={styles["navbar__hamburger"]} aria-label="Menu">
           <IconHamburger />
         </button>
         <ul className={styles["navbar__list"]}>

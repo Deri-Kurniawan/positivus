@@ -1,20 +1,21 @@
-import companyAmazonImage from "./assets/images/company-amazon.png";
-import companyDribbbleImage from "./assets/images/company-dribbble.png";
-import companyNetflixImage from "./assets/images/company-netflix.png";
-import companyNotionImage from "./assets/images/company-notion.png";
-import companyZoomImage from "./assets/images/company-zoom.png";
-import serviceImage3 from "./assets/images/service-browser-window-with-emoticon-likes-and-stars-around.png";
-import serviceImage1 from "./assets/images/service-magnifier-web-search-with-elements.png";
-import serviceImage5 from "./assets/images/service-many-browser-windows-with-different-information.png";
-import serviceImage2 from "./assets/images/service-selecting-a-value-in-the-browser-window.png";
-import serviceImage4 from "./assets/images/service-sending-messages-from-one-place-to-another.png";
-import serviceImage6 from "./assets/images/service-volumetric-analytics-of-different-types-in-web-browsers.png";
-import teamImage1 from "./assets/images/team-1.png";
-import teamImage2 from "./assets/images/team-2.png";
-import teamImage3 from "./assets/images/team-3.png";
-import teamImage4 from "./assets/images/team-4.png";
-import teamImage5 from "./assets/images/team-5.png";
-import teamImage6 from "./assets/images/team-6.png";
+import companyAmazonImage from "./assets/images/company-amazon.webp";
+import companyDribbbleImage from "./assets/images/company-dribbble.webp";
+import companyNetflixImage from "./assets/images/company-netflix.webp";
+import companyNotionImage from "./assets/images/company-notion.webp";
+import companyZoomImage from "./assets/images/company-zoom.webp";
+import companyHubspotImage from "./assets/images/company-hubspot.webp";
+import serviceImage3 from "./assets/images/service-browser-window-with-emoticon-likes-and-stars-around.webp";
+import serviceImage1 from "./assets/images/service-magnifier-web-search-with-elements.webp";
+import serviceImage5 from "./assets/images/service-many-browser-windows-with-different-information.webp";
+import serviceImage2 from "./assets/images/service-selecting-a-value-in-the-browser-window.webp";
+import serviceImage4 from "./assets/images/service-sending-messages-from-one-place-to-another.webp";
+import serviceImage6 from "./assets/images/service-volumetric-analytics-of-different-types-in-web-browsers.webp";
+import teamImage1 from "./assets/images/team-1.webp";
+import teamImage2 from "./assets/images/team-2.webp";
+import teamImage3 from "./assets/images/team-3.webp";
+import teamImage4 from "./assets/images/team-4.webp";
+import teamImage5 from "./assets/images/team-5.webp";
+import teamImage6 from "./assets/images/team-6.webp";
 import { IconFacebook, IconLinkedIn, IconTwitter } from "./components/icons";
 
 type TData = {
@@ -37,19 +38,48 @@ const data: TData = {
     { title: "Blog", url: "#blog" },
   ],
   companies: [
-    { image: companyAmazonImage, alt: "Amazon", url: "https://www.amazon.com" },
+    {
+      image: companyAmazonImage,
+      alt: "Amazon",
+      width: 124.11,
+      height: 48,
+      url: "https://www.amazon.com",
+    },
     {
       image: companyDribbbleImage,
       alt: "Dribbble",
+      width: 126.37,
+      height: 48,
       url: "https://dribbble.com",
+    },
+    {
+      image: companyHubspotImage,
+      alt: "HubSpot",
+      width: 128.63,
+      height: 48,
+      url: "https://www.hubspot.com",
+    },
+    {
+      image: companyNotionImage,
+      alt: "Notion",
+      width: 145.55,
+      height: 48,
+      url: "https://www.notion.so",
     },
     {
       image: companyNetflixImage,
       alt: "Netflix",
+      width: 128.63,
+      height: 48,
       url: "https://www.netflix.com",
     },
-    { image: companyNotionImage, alt: "Notion", url: "https://www.notion.so" },
-    { image: companyZoomImage, alt: "Zoom", url: "https://zoom.us" },
+    {
+      image: companyZoomImage,
+      alt: "Zoom",
+      width: 110.57,
+      height: 48,
+      url: "https://zoom.us",
+    },
   ],
   services: [
     {

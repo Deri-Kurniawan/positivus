@@ -1,5 +1,5 @@
 import { forwardRef, HTMLAttributes } from "react";
-import ctaIllustrationImage from "../../../assets/images/cta-illustration.png";
+import ctaIllustrationImage from "../../../assets/images/cta-illustration.webp";
 import { mcn } from "../../../lib/utils";
 import Button from "../../button/button";
 import Card from "../../card/card";
@@ -46,6 +46,7 @@ const CtaSection = forwardRef<HTMLDivElement, CtaSectionProps>(
               width={359}
               height={394.27}
               alt=""
+              loading="lazy"
             />
           </div>
         </Card>

@@ -82,6 +82,7 @@ const ServicesSection = forwardRef<HTMLDivElement, ServicesSectionProps>(
                 <img
                   className={styles["services-section__image"]}
                   {...service.body}
+                  loading="lazy"
                 />
               </div>
             </Card>

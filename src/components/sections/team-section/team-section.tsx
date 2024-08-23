@@ -35,13 +35,24 @@ const TeamSection = forwardRef<HTMLDivElement, TeamSectionProps>(
               withShadow
             >
               <div className={styles["team-section__profile"]}>
-                <img src={picture} alt={`${name} profile picture`} />
+                <img
+                  style={{
+                    height: `103px`,
+                    width: `auto`,
+                  }}
+                  src={picture}
+                  width={103}
+                  height={103}
+                  alt={`${name} profile picture`}
+                  loading="lazy"
+                />
                 <div className={styles["team-section__info"]}>
                   <ButtonIcon
                     icon={<IconLinkedIn />}
                     variant="secondary"
                     iconOnly
                     asChild
+                    aria-label={`Visit ${name}'s LinkedIn profile`}
                   >
                     <a href={linkedin} target="_blank" rel="noreferrer" />
                   </ButtonIcon>

@@ -7,6 +7,8 @@ declare type IconProps = React.SVGAttributes<SVGSVGElement>;
 declare type TCompany = {
   image: string;
   alt: string;
+  width: number;
+  height: number;
   url: string;
 };
 declare type TCaseStudy = {
