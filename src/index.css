@@ -7,6 +7,45 @@
   font-display: swap;
 }
 
+:root {
+  --font-family: "Space Grotesk", sans-serif;
+
+  /* Colors (HSL) */
+  --color-primary: 87, 100%, 70% /*#b9ff66*/;
+  --color-secondary: 234, 17%, 12% /*#191a23*/;
+  --color-tertiary: 0, 0%, 95% /*#f3f3f3*/;
+  --color-white: 0, 0%, 100% /*#ffffff*/;
+  --color-black: 0, 0%, 0% /*#000000*/;
+
+  /* Sizes */
+  --container: 20px;
+
+  /* Typography */
+  --font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--font-size);
+}
+
 body {
-  font-family: "Space Grotesk", sans-serif;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --container: 125px;
+  }
+}
+
+@media (min-width: 1366px) {
+  :root {
+    --container: 100px;
+  }
 }

@@ -1,0 +1,61 @@
+.typography {
+  font-family: var(--font-family);
+  font-size: 1.125rem;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+.typography--level-1,
+.typography--level-2,
+.typography--level-3,
+.typography--level-4 {
+  font-weight: 500;
+}
+
+.typography--level-p {
+  font-weight: 400;
+}
+
+.typography--level-1 {
+  font-size: 2.6875rem;
+}
+
+.typography--level-2 {
+  font-size: 2.25rem;
+}
+
+.typography--level-3 {
+  font-size: 1.625rem;
+}
+
+.typography--level-4 {
+  font-size: 1.125rem;
+}
+
+.typography--level-p {
+  font-size: 1rem;
+  line-height: 24px;
+}
+
+@media (min-width: 1366px) {
+  .typography--level-1 {
+    font-size: 3.75rem;
+  }
+
+  .typography--level-2 {
+    font-size: 2.5rem;
+  }
+
+  .typography--level-3 {
+    font-size: 1.875rem;
+  }
+
+  .typography--level-4 {
+    font-size: 1.5rem;
+  }
+
+  .typography--level-p {
+    font-size: 1.125rem;
+  }
+}

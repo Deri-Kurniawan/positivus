@@ -1,0 +1,168 @@
+.button-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: var(--font-family);
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 28px;
+  color: hsl(var(--color-black));
+}
+
+.button-icon:not(button) {
+  cursor: pointer;
+  text-decoration: none;
+  list-style: none;
+}
+
+.button-icon__icon {
+  display: inline-flex;
+  padding: 10px;
+  border-radius: 50%;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.button-icon__icon,
+.button-icon__label > * {
+  fill: inherit;
+  color: inherit;
+}
+
+.button-icon--rotate-arrow:hover .button-icon__icon {
+  transform: rotate(30deg);
+}
+
+.button-icon--icon-only > .button-icon__label {
+  display: none;
+}
+
+/* ===== Solid Styles ===== */
+
+/* primary styles */
+.button-icon--primary > .button-icon__icon {
+  background-color: hsl(var(--color-primary));
+}
+.button-icon--primary > *,
+.button-icon--primary > .button-icon__icon > * {
+  color: hsl(var(--color-black));
+  fill: hsl(var(--color-black));
+}
+
+/* primary alt styles */
+.button-icon--primary-alt > .button-icon__icon {
+  background-color: hsl(var(--color-primary));
+}
+.button-icon--primary-alt > *,
+.button-icon--primary-alt > .button-icon__icon > * {
+  color: hsl(var(--color-white));
+  fill: hsl(var(--color-white));
+}
+
+/* secondary styles */
+.button-icon--secondary > .button-icon__icon {
+  background-color: hsl(var(--color-secondary));
+}
+.button-icon--secondary > *,
+.button-icon--secondary > .button-icon__icon > * {
+  color: hsl(var(--color-primary));
+  fill: hsl(var(--color-primary));
+}
+.button-icon__label {
+  color: hsl(var(--color-black));
+}
+
+/* secondary alt styles */
+.button-icon--secondary-alt > .button-icon__icon {
+  background-color: hsl(var(--color-secondary));
+}
+.button-icon--secondary-alt > *,
+.button-icon--secondary-alt > .button-icon__icon > * {
+  color: hsl(var(--color-white));
+  fill: hsl(var(--color-white));
+}
+
+/* ghost styles */
+.button-icon--ghost > .button-icon__icon {
+  background-color: hsl(var(--color-white));
+}
+.button-icon--ghost > *,
+.button-icon--ghost > .button-icon__icon > * {
+  color: hsl(var(--color-primary));
+  fill: hsl(var(--color-primary));
+}
+.button-icon--ghost > .button-icon__label {
+  color: hsl(var(--color-white));
+}
+
+/* ghost alt styles */
+.button-icon--ghost-alt > .button-icon__icon {
+  background-color: hsl(var(--color-white));
+}
+.button-icon--ghost-alt > *,
+.button-icon--ghost-alt > .button-icon__icon > * {
+  color: hsl(var(--color-black));
+  fill: hsl(var(--color-black));
+}
+.button-icon--ghost-alt > .button-icon__label {
+  color: hsl(var(--color-white));
+}
+
+/* outline styles */
+.button-icon--outline > .button-icon__icon {
+  border: 1px solid hsl(var(--color-black));
+  background-color: hsl(var(--color-white));
+}
+.button-icon--outline > *,
+.button-icon--outline > .button-icon__icon > * {
+  color: hsl(var(--color-black));
+  fill: hsl(var(--color-black));
+}
+.button-icon--outline > .button-icon__label {
+  color: hsl(var(--color-black));
+}
+
+/* ===== Plain Styles ===== */
+
+/* primary plain styles */
+.button-icon--primary-plain {
+  flex-direction: row-reverse;
+}
+.button-icon--primary-plain > .button-icon__icon {
+  padding: 0;
+}
+.button-icon--primary-plain > *,
+.button-icon--primary-plain > .button-icon__icon > * {
+  color: hsl(var(--color-primary));
+  fill: hsl(var(--color-primary));
+}
+
+/* secondary plain styles */
+.button-icon--secondary-plain {
+  flex-direction: row-reverse;
+}
+.button-icon--secondary-plain > .button-icon__icon {
+  padding: 0;
+}
+.button-icon--secondary-plain > *,
+.button-icon--secondary-plain > .button-icon__icon > * {
+  color: hsl(var(--color-secondary));
+  fill: hsl(var(--color-secondary));
+}
+
+/* ghost plain styles */
+.button-icon--ghost-plain {
+  flex-direction: row-reverse;
+}
+.button-icon--ghost-plain > .button-icon__icon {
+  padding: 0;
+}
+.button-icon--ghost-plain > *,
+.button-icon--ghost-plain > .button-icon__icon > * {
+  color: hsl(var(--color-white));
+  fill: hsl(var(--color-white));
+}
