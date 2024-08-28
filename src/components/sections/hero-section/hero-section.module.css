@@ -20,6 +20,7 @@
 
 .hero-section__content__cta {
   margin-top: 40px !important;
+  width: 100% !important;
 }
 
 .hero-section__content__title--mobile {
@@ -28,10 +29,6 @@
 
 .hero-section__content__title--desktop {
   display: none;
-}
-
-.hero-section__content__cta {
-  width: 100% !important;
 }
 
 .hero-section__illustration {
@@ -47,13 +44,13 @@
 
 @media (min-width: 1366px) {
   .hero-section {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 108.54px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 40px;
   }
 
   .hero-section__content {
+    grid-column: span 6;
     display: flex;
     flex-direction: column;
     gap: 35px;
@@ -89,5 +86,14 @@
   .hero-section__content__cta {
     margin: 0 !important;
     width: fit-content !important;
+  }
+
+  .hero-section__illustration {
+    grid-column: span 6;
+    margin-top: 0;
+  }
+
+  .hero-section__illustration__image {
+    width: 100%;
   }
 }
