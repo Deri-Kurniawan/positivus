@@ -27,6 +27,12 @@
   display: flex;
   flex-direction: row;
   gap: 20px;
+  user-select: none;
+  cursor: grab;
+}
+
+.testimonials-section__list:active {
+  cursor: grabbing;
 }
 
 .testimonials-section__list::-webkit-scrollbar {
@@ -117,6 +123,7 @@
   width: 14px;
   height: 14px;
   fill: hsl(var(--color-tertiary));
+  cursor: pointer;
 }
 
 .testimonials-section__indicator--active {
