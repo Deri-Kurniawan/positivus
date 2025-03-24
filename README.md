@@ -25,11 +25,6 @@ For developing, documenting, and testing UI components, we utilized:
 - **Chromatic**: For automated visual regression testing to maintain UI consistency.
 - **Jest**: For unit testing to ensure the components work as expected.
 
-## Live Demo
-
-Experience the live version of the Positivus Landing Page here:  
-[https://positivus.deri.my.id](https://positivus.deri.my.id)
-
 ## Component Library
 
 Explore the component library developed with Storybook and tested with Chromatic:  
