@@ -28,9 +28,4 @@ For developing, documenting, and testing UI components, we utilized:
 ## Component Library
 
 Explore the component library developed with Storybook and tested with Chromatic:  
-[https://development--66aea6f354f5805b7d1f6c3f.chromatic.com](https://development--66aea6f354f5805b7d1f6c3f.chromatic.com)
-
-## More Information
-
-For more details about this project and others, visit my portfolio website:  
-[https://www.deri.my.id](https://www.deri.my.id)
+[https://66aea6f354f5805b7d1f6c3f-chdvviissb.chromatic.com](https://66aea6f354f5805b7d1f6c3f-chdvviissb.chromatic.com/)
