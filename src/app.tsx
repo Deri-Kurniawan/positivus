@@ -16,30 +16,32 @@ const App = () => {
   return (
     <>
       <Navbar data={data.navlinks} />
-      <HeroSection className={styles["hero-section"]} />
-      <CompanySection
-        className={styles["company-section"]}
-        data={data.companies}
-      />
-      <ServicesSection
-        className={styles["services-section"]}
-        data={data.services}
-      />
-      <CtaSection className={styles["cta-section"]} />
-      <CaseStudiesSection
-        className={styles["case-studies-section"]}
-        data={data.caseStudies}
-      />
-      <OurWorkingProcessSection
-        className={styles["our-working-process-section"]}
-        data={data.ourWorkingProcess}
-      />
-      <TeamSection className={styles["team-section"]} data={data.team} />
-      <TestimonialsSection
-        className={styles["testimonials-section"]}
-        data={data.testimonials}
-      />
-      <ContactUsSection className={styles["contact-us-section"]} />
+      <main>
+        <HeroSection className={styles["hero-section"]} />
+        <CompanySection
+          className={styles["company-section"]}
+          data={data.companies}
+        />
+        <ServicesSection
+          className={styles["services-section"]}
+          data={data.services}
+        />
+        <CtaSection className={styles["cta-section"]} />
+        <CaseStudiesSection
+          className={styles["case-studies-section"]}
+          data={data.caseStudies}
+        />
+        <OurWorkingProcessSection
+          className={styles["our-working-process-section"]}
+          data={data.ourWorkingProcess}
+        />
+        <TeamSection className={styles["team-section"]} data={data.team} />
+        <TestimonialsSection
+          className={styles["testimonials-section"]}
+          data={data.testimonials}
+        />
+        <ContactUsSection className={styles["contact-us-section"]} />
+      </main>
       <Footer navLinks={data.navlinks} socialMedia={data.socialMedia} />
     </>
   );
